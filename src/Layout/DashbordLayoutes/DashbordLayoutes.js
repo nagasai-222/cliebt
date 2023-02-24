@@ -23,14 +23,46 @@ import useDoctor from "../../hooks/useDoctorsSecurity";
 import useNurse from "../../hooks/userNurseSecurity";
 import { MdPeopleAlt } from "react-icons/md";
 import useTitle from "../../hooks/useTitle";
+import { useEffect } from 'react';
+
+// your code goes here
+
+// import emailUser from "../../Pages/Register/Login";
 const DashbordLayoutes = () => {
   useTitle('Dashboard')
   const {user}= useContext(AuthContext);
+  console.log(user)
+  console.log('hieee')
+  function useAdmin(email) {
+    const [isAdmin, setIsAdmin] = useState(false);
+  
+    useEffect(() => {
+      if (email === "admin@gmail.com") {
+        setIsAdmin(true);
+      }
+    }, [email]);
+  
+    return [isAdmin];
+  }
+ 
+  function useDoctor(email) {
+    const [isDoctor, setIsDoctor] = useState(false);
+  
+    useEffect(() => {
+      // Replace doctor@gmail.com with the actual doctor email
+      if (email === "doctor@gmail.com") {
+        setIsDoctor(true);
+      }
+    }, [email]);
+  
+    return [isDoctor];
+  }
+  
   const [isAdmin] = useAdmin(user?.email)
   const [isNurse] = useNurse(user?.email)
   const [isDoctor] = useDoctor(user?.email)
   const [toggle, setToggle] = useState(false);
-console.log(user);
+  // console.log(emailUser);
   return (
     <div>
       

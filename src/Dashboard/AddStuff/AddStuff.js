@@ -10,7 +10,7 @@ const AddStuff = () => {
     formState: { errors },
   } = useForm();
 
-  const imageHostKey = process.env.REACT_APP_imgbb_key;
+  const imageHostKey = 'f97079f89d12f2fe32c5da77d09e5abf';
     // console.log(imageHostKey);
   const navigate = useNavigate();
 

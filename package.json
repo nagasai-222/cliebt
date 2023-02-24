@@ -27,6 +27,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "all": "^0.0.0",
     "aos": "^2.3.4",
     "axios": "^1.2.2",
     "chart.js": "^3.9.1",
